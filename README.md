@@ -7,9 +7,9 @@
 
 ## Install Corrly
 
-install.packages(“devtools”)
+install.packages("devtools")
 
-devtools::install\_github(“maheshKulkarniX/corrlY”)
+devtools::install_github("maheshKulkarniX/corrlY")
 
 ## Getting started
 

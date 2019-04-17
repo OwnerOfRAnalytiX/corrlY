@@ -3,10 +3,15 @@ Type: Package
 Title: All Types of Correlation Charts using Plotly
 Version: 1.0.0
 Author: Mahesh Kulkarni
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: Mahesh Kulkarni <kulkarni.mahesh320@gmail.com>
 Description: This is a Data Visualization Package For Correlation Using Plotly library.
 License: GNU-3
 URL: https://github.com/maheshKulkarniX/corrlY
+BugReports: https://github.com/maheshKulkarniX/corrlY/issues
+Depends: 
+    R (>= 3.5.2)
+Imports: 
+    plotly
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

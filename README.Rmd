@@ -1,0 +1,112 @@
+---
+output: rmarkdown::github_document
+---
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE, include=FALSE, message=FALSE}
+source("R/corrly.R")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+# Corrly <a href='https://maheshkulkarnix.github.io/corrly/'><img src='docs/logo.png' align="right" height="190" /></a>
+
+### Corrly is a Data Visualization Package For All Types of Correlation Charts using Plotly Package.
+
+## Install Corrly
+
+install.packages("devtools")
+
+devtools::install_github("maheshKulkarniX/corrlY")
+
+
+## Getting started
+
+```{r}
+library(plotly)
+
+# For Example Consider Dataframe "cars" which is already predefined dataset in R.
+head(cars)
+```
+
+
+## correlation Coeficient using pearson Method
+
+Method:- corr_coef_pearson(variable1 = variable1, variable2 = variable2, decimal = 2)
+
+```{r}
+# Example: 
+corr_coef_pearson(variable1 = cars$speed, variable2 = cars$dist, decimal = 2)
+```
+
+## correlation Coeficient using kendall Method
+
+Method:- corr_coef_kendall(variable1 = variable1, variable2 = variable2, decimal = 2)
+
+```{r}
+# Example: 
+corr_coef_kendall(variable1 = cars$speed, variable2 = cars$dist, decimal = 2)
+```
+
+## correlation Coeficient using spearman Method
+Method:- corr_coef_spearman(variable1 = variable1, variable2 = variable2, decimal = 2)
+
+```{r}
+# Example: 
+corr_coef_spearman(variable1 = cars$speed, variable2 = cars$dist, decimal = 2)
+```
+
+## Correlation Scatter Plot
+
+Method:- corr_scatterly(data= data_frame, variable1= data_frame$col1, variable2=data_frame$col2, 
+                        corr_coef= spearman, xname="Name on X-axis", yname="Name on Y-axis")
+
+```{r}
+# Example: 
+spearman<- corr_coef_spearman(variable1 = cars$speed, variable2 = cars$dist, decimal = 2)
+corr_scatterly(data= cars, variable1= cars$speed, variable2= cars$dist, corr_coef= spearman, xname="Speed", yname="Distance")
+```
+
+## Correlation Matrix Plot
+
+Method:- matrixly(data = data_frame)
+
+```{r}
+# Example: 
+matrixly(data = cars)
+```
+
+## Autocorrelation
+
+Method:- acf_ly(Series)
+```{r, message=FALSE}
+#Example:- 
+temp_10to11_AM<- c(21, 20, 11, 10, 9.1, 11.6, 12, 15.10, 18, 19)
+temp_12to1_PM<- c(14, 22, 13, 17, 7.1, 21.6, 15, 5.20, 8, 29)
+temp_1to2_PM<- c(31, 10, 1, 0.7, 1.1, 31.6, 2, 17.10, 8, 9)
+temp_3to4_PM<- c(4, 12, 3, 7, 8.1, 2.6, 17, 5.20, 8, 9)
+tempreature<- data.frame(temp_10to11_AM, temp_12to1_PM, temp_1to2_PM, temp_3to4_PM)
+head(tempreature)
+a_series<- c(tempreature$temp_10to11_AM, tempreature$temp_12to1_PM)
+acf_ly(series = a_series)
+```
+
+
+## Partial Autocorrelation
+
+Method:- pacf_ly(series)
+```{r, message=FALSE}
+p_series<- c(tempreature$temp_1to2_PM, tempreature$temp_3to4_PM)
+pacf_ly(series = p_series)
+```
+
+
+## Cross Correlation
+
+Method:- ccf_ly(series1, series2)
+
+```{r, message=FALSE}
+ccf_ly(a_series, p_series)
+```

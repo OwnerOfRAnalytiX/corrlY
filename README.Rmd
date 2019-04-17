@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-# Corrly <a href='https://maheshkulkarnix.github.io/corrly/'><img src='docs/logo.png' align="right" height="190" /></a>
+# Corrly <a href='https://maheshkulkarnix.github.io/corrly/'><img src='docs/logo.png' align="right" height="220" /></a>
 
 ### Corrly is a Data Visualization Package For All Types of Correlation Charts using Plotly Package.
 
